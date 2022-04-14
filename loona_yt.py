@@ -1,4 +1,3 @@
-
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
@@ -42,9 +41,9 @@ def main():
 
     while True:
         try:
-            url = "https://www.youtube.com/watch?v=87fKv045u5U"
+            url = "https://www.youtube.com/watch?v=ytuMObZlqOE"
 
-            play_video(url) #294 secs
+            play_video(url) #312 secs
             time.sleep(10) #give it a couple seconds to load
             pyautogui.press('space')
 
@@ -60,7 +59,7 @@ def main():
             cv2.imwrite(filename, image)
             text_on_image(filename)
 
-            time.sleep(240)
+            time.sleep(270)
             image = pyautogui.screenshot()
 
             image = cv2.cvtColor(np.array(image),
@@ -88,7 +87,8 @@ def main():
             filename = "loonastream" + time.strftime('%Y%m%d-%H%M%S') + ".png"
             new_im.save(filename)
 
-            time.sleep(720)
+            time.sleep(600)
+            pyautogui.hotkey('ctrl', 'w') #close window
 
         except webbrowser.Error as e:
             print(e)
